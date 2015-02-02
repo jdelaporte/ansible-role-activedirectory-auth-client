@@ -1,0 +1,33 @@
+nslcd:
+  nslcd/ldap-binddn:
+    vtype: string
+    value: ""
+  nslcd/ldap-bindpw:
+    vtype: password
+    value: ""
+  nslcd/ldap-uris:
+    vtype: string
+    value: ""
+  nslcd/ldap-base:
+    vtype: string
+    value: ""
+  libraries/restart-without-asking:
+    vtype: boolean
+    value: true
+  nlscd/ldap-starttls:
+    vtype: boolean
+    value: false
+  nlscd/ldap-reqcert:
+    vtype: select
+    value: "never"
+man_db:
+  man-db/auto-update:
+    vtype: boolean
+    value: true
+libnss_ldapd:
+  libnss-ldapd/nsswitch:
+    vtype: multiselect
+    value: 'group, passwd, shadow'
+  libnss-ldapd/clean_nsswitch:
+    vtype: "boolean"
+    value: false

@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  author: Stanley Karunditu
+  description: Set up Active Directory authentication using debconf.
+  license: GPLv2
+  min_ansible_version: 1.6
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - all
+  categories:
+  - system
+dependencies: []
+
