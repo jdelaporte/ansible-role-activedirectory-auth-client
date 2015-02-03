@@ -28,7 +28,7 @@ https://github.com/CumulusNetworks/ansible-role-activedirectory-auth-client
 
 ```
 
-Copy the root CA certificate of the Active Directory to the switddch/server.
+Copy the root CA certificate of the Active Directory to the switch or server.
 
 
 ## Variables
