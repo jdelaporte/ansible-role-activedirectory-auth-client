@@ -8,7 +8,7 @@ Active Directory server](http://bit.ly/18EbwKc)
 ## Requirements
 - Ansible 1.6 and higher
 - Active Directory with LDAP/SSL support _(role can be easily modified to just use LDAP
-  with no ssl)
+  with no ssl)_
 - root CA certificate of the Active Directory domain controller.
 
 
@@ -20,13 +20,16 @@ $ ansible-galaxy install cumulus.ldap-auth-ad
 ```
 
 Using `git`:
+
 ```shell
+
 $ git clone
 https://github.com/CumulusNetworks/ansible-role-activedirectory-auth-client
 
+```
+
 Copy the root CA certificate of the Active Directory to the switddch/server.
 
-```
 
 ## Variables
 See
