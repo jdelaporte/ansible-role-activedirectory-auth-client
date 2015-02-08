@@ -64,8 +64,17 @@ ad_domain_sid: "S-1-5-21-1613317992-1820204577-3688399344"
 
 License
 -------
+MIT
 
-GPLv2
+
+## Contributing
+
+1. Fork it.
+2. Create your feature branch (`git checkout -b my-new-feature`).
+3. Commit your changes (`git commit -am 'Add some feature'`).
+4. Push to the branch (`git push origin my-new-feature`).
+5. Create new Pull Request.
+
 
 ![Cumulus icon](http://cumulusnetworks.com/static/cumulus/img/logo_2014.png)
 
