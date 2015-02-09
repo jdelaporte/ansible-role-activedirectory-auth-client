@@ -2,11 +2,12 @@
 
 Ansible role to configure a Debian based server or switch with ldap
 authentication to a Active directory server. For more details, see
-the Cumulus Linux Article on [how to configure LDAP authentication to an
-Active Directory server](http://bit.ly/18EbwKc)
+the Cumulus Linux Article on [LDAP authentication on a Debian based server/switch to
+using an Active Directory server](http://bit.ly/18EbwKc)
 
 ## Requirements
 - Ansible 1.6 and higher
+- Debian based server/switch
 - Active Directory with LDAP/SSL support _(role can be easily modified to just use LDAP
   with no ssl)_
 - root CA certificate of the Active Directory domain controller.
