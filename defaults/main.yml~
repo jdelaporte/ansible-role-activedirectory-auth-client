@@ -1,8 +1,5 @@
 ## defaults from KB Article about LDAP http://bit.ly/18EbwKc
-# ad_server: "dc1.{{ ad_domain }}"
-# ad_hostname: "client.{{ ad_domain }}"
-# ad_domain: "example.com"
-# ldap_uri: "ldaps://{{ ad_server }}"
+# ldap_uri: "ldaps://my-adserver.rtp.example.test"
 # ldap_base_dn: "ou=support,dc=rtp,dc=example,dc=test"
 # ldap_bind_dn: "CN=cumulus admin,CN=Users,DC=rtp,DC=example,DC=test"
 # ldap_bind_passwd: "1Q2w3e4r!"

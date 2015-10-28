@@ -1,45 +1,7 @@
+#tasks/main.yml
 ---
+include: debian.yml
+when: ansible_os_family == "Debian"
 
-- name: install debconf
-  apt: name=debconf state=present
-
-- name: set nslcd debconf variables
-  debconf: >
-    name=nslcd
-    question={{item.key}}
-    vtype={{item.value.vtype }}
-    value="{{item.value.value}}"
-  with_dict: nslcd
-
-- name: set man-db debconf variables
-  debconf: >
-    name=man-db
-    question={{item.key}}
-    vtype={{item.value.vtype }}
-    value="{{item.value.value}}"
-  with_dict: man_db
-
-- name: set libnss-ldap debconf variables
-  debconf: >
-    name=libnss-ldap
-    question={{item.key}}
-    vtype={{item.value.vtype }}
-    value="{{item.value.value}}"
-  with_dict: libnss_ldapd
-
-- name: install libnss-ldapd
-  apt: name=libnss-ldapd state=present update_cache=yes
-
-- name: copy ad server public cert to public cert location
-  copy: src=ldap_root_ca.pem  dest=/etc/ssl/certs/rtp-example-ca.pem mode=444
-  notify:
-    - restart nslcd
-    - restart nscd
-
-- name: copy libnss-ldapd file
-  template: src=nslcd.conf.j2 dest=/etc/nslcd.conf
-  notify:
-    - restart nslcd
-    - restart nscd
-
-
+include: rhel.yml
+when: ansible_os_family == "RedHat"

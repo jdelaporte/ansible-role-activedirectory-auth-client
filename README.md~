@@ -1,12 +1,13 @@
 # Ansible Role: libnss-ldap + Active Directory
 
-Ansible role to configure a Debian based or RedHat 7 server or switch with ldap authentication to a Active directory server. For more details, see
+Ansible role to configure a Debian based server or switch with ldap
+authentication to a Active directory server. For more details, see
 the Cumulus Linux Article on [LDAP authentication on a Debian based server/switch to
 using an Active Directory server](http://bit.ly/18EbwKc)
 
 ## Requirements
 - Ansible 1.6 and higher
-- Debian based server/switch or RedHat 7 family switch
+- Debian based server/switch
 - Active Directory with LDAP/SSL support _(role can be easily modified to just use LDAP
   with no ssl)_
 - root CA certificate of the Active Directory domain controller.
@@ -16,7 +17,7 @@ using an Active Directory server](http://bit.ly/18EbwKc)
 
 Using `ansible-galaxy`:
 ```shell
-$ ansible-galaxy install cumulus.activedirectory-auth-client
+$ ansible-galaxy install cumulus.ldap-auth-ad
 ```
 
 Using `git`:

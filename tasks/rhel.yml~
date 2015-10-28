@@ -1,0 +1,35 @@
+#tasks/rhel.yml
+#JRD
+#Thanks to glisha
+---
+- yum: name="{{ item }}" state=present
+  with_items:
+    - sssd
+    
+
+- name: Ensure servers default ip and hostname are in /etc/hosts
+  lineinfile: dest=/etc/hosts
+                line="{{ ansible_default_ipv4.address }} 
+                {{ ansible_fqdn }} {{ ansible_hostname }}"
+                regexp="^{{ ansible_default_ipv4.address }}"
+                state=present
+
+- name: Use domain controllers as DNS servers
+  template: src=resolv.conf.j2 dest=/etc/resolv.conf
+              owner=root group=root mode=0644
+
+- name: template sssd.conf file
+  template: src=sssd.conf.j2 dest=/etc/sssd.conf
+              backup=yes
+
+- name: template nsswitch.conf file
+  template: src=nsswitch.conf.j2 dest=/etc/nsswitch.conf
+              backup=yes
+
+#thanks to Tudor on couyon.net
+- lineinfile: dest=/etc/pam.d/system-auth 
+                line='session required pam_mkhomedir.so umask=0022 skel=/etc/skel/'
+                insert_after='^session required pam_mkhomedir.so'
+
+- shell: 'authconfig --enablesssd --enablesssdauth 
+          --enablelocauthorize --update'
